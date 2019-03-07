@@ -1,0 +1,31 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "opts": {
+    "destination": "./docs",
+    "encoding": "utf8",
+    "readme": "./README.md",
+    "recurse": true,
+    "verbose": true,
+    "tutorials": "./tutorials",
+    "template": "node_modules/foodoc/template"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "name": "Nassidjcom",
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "path": "ink-docstrap",
+    "navType": "vertical",
+    "linenums": false,
+    "dateFormat": "MMMM Do YYYY, h:mm:ss a",
+    "footerText": "NSC Lib"
+
+  }
+}
