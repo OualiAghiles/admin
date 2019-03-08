@@ -64,17 +64,41 @@ window.addEventListener('load', () => {
       const tmp = document.querySelector('.weather-temp')
       tmp.innerText= temp
     }
+    /**
+     *  add description on the card weather
+     *  @method addDesc
+     *  @param  {string} desc [description]
+     */
     addDesc(desc){
       const description = document.querySelector('.weather-description')
       description.innerText= desc
     }
+    /**
+     *  convert farnheight to celsius
+     *  @method convTempToF
+     *  @param  {num}    tmp temperature
+     *  @return {num}        convertthe temperature
+     */
     convTempToC(tmp) {
 
       return (tmp - 32) * (5/9)
     }
+    /**
+     *  convert celsius to farnheight
+     *  @method convTempToF
+     *  @param  {num}    tmp temperature
+     *  @return {num}        convertthe temperature
+     */
     convTempToF(tmp) {
       return (tmp * (9/5)) + 32
     }
+
+    /**
+     *  set icon related to the weather
+     *  @method setIcons
+     *  @param  {string} icon     icon class
+     *  @param  {string} dataIcon [class|id]
+     */
     setIcons(icon, dataIcon) {
       const skycons = new Skycons({color:"gray"})
       const el = document.querySelector(dataIcon)
