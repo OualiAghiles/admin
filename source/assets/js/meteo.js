@@ -66,6 +66,7 @@ window.addEventListener('load', () => {
     }
     /**
      *  add description on the card weather
+     *  @memberOf Meteo
      *  @method addDesc
      *  @param  {string} desc [description]
      */
@@ -76,6 +77,7 @@ window.addEventListener('load', () => {
     /**
      *  convert farnheight to celsius
      *  @method convTempToF
+     *  @memberOf Meteo
      *  @param  {num}    tmp temperature
      *  @return {num}        convertthe temperature
      */
@@ -86,6 +88,7 @@ window.addEventListener('load', () => {
     /**
      *  convert celsius to farnheight
      *  @method convTempToF
+     *  @memberOf Meteo
      *  @param  {num}    tmp temperature
      *  @return {num}        convertthe temperature
      */
@@ -96,6 +99,7 @@ window.addEventListener('load', () => {
     /**
      *  set icon related to the weather
      *  @method setIcons
+     *  @memberOf Meteo
      *  @param  {string} icon     icon class
      *  @param  {string} dataIcon [class|id]
      */
