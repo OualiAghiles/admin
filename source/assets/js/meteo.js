@@ -50,13 +50,25 @@ window.addEventListener('load', () => {
         .then(data => {
           const {temperature, summary, time, icon, humidity} = data.currently
           console.log(data.currently.temperature)
+          console.log(icon)
           const temp = Math.floor(this.convTempToC(temperature))
           this.addTemp(temp)
+          this.addLocation(data.timezone)
+          this.addDesc(summary)
+          this.setIcons(icon, '.icon')
         })
+    }
+    addLocation(loc){
+      const location = document.querySelector('.weather-location')
+      location.innerText= loc
     }
     addTemp(temp){
       const tmp = document.querySelector('.weather-temp')
       tmp.innerText= temp
+    }
+    addDesc(desc){
+      const description = document.querySelector('.weather-description')
+      description.innerText= desc
     }
     convTempToC(tmp) {
 
@@ -64,6 +76,16 @@ window.addEventListener('load', () => {
     }
     convTempToF(tmp) {
       return (tmp * (9/5)) + 32
+    }
+    setIcons(icon, dataIcon) {
+      const skycons = new Skycons({color:"gray"})
+      const el = document.querySelector(dataIcon)
+      let currTcon = icon.replace(/-/g, "_")
+      currTcon = currTcon.toUpperCase()
+      console.log('currTcon',currTcon)
+      skycons.play()
+      return skycons.set(el, Skycons[currTcon])
+
     }
 
   }
