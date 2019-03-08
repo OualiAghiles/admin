@@ -54,6 +54,14 @@ window.addEventListener('load', () => {
           this.addLocation(data.timezone)
           this.addDesc(summary)
           this.setIcons(icon, '.icon')
+          let week = document.querySelectorAll('.weather-week .col')
+          console.log(week)
+          for (let i = 0; i < week.length; i++) {
+            const element = data.daily.data[i];
+            console.log(`.d${i}`)
+            this.setIcons(element.icon, `.d${i}`)
+
+          }
         })
     }
     addLocation(loc){
@@ -104,7 +112,18 @@ window.addEventListener('load', () => {
      *  @param  {string} dataIcon [class|id]
      */
     setIcons(icon, dataIcon) {
-      const skycons = new Skycons({color:"gray"})
+      const skycons = new Skycons({"monochrome": false,
+      "colors": {
+            "cloudy": "#333333",
+            "moon": "#78586F",
+            "fog": "#78586F",
+            "fogbank": "#B4ADA3",
+            "wind": "#B4ADA3",
+            "snow": "#7B9EA8",
+            "leaf":"#7B9EA8",
+            "rain": "#7B9EA8",
+            "sun": "#FF8C42"
+          } });
       const el = document.querySelector(dataIcon)
       let currTcon = icon.replace(/-/g, "_")
       currTcon = currTcon.toUpperCase()

@@ -1,4 +1,26 @@
 main
   .row
-    .col.l3
+    .col.l4.m4.s12
       include meteo
+    .col.l4.m4.s12
+      .calendar.z-depth-2
+        include calendar
+    .col.l4.m4.s12
+      .todos.z-depth-2
+        h1
+          | To-do List
+          i.fa.fa-pencil
+        input(type='text', placeholder='Add New Todo')
+        ul
+          li
+            span
+              i.fa.fa-trash(aria-hidden='true')
+            |  Buy t-shirt for mom
+          li
+            span
+              i.fa.fa-trash(aria-hidden='true')
+            |  Do dishes
+          li
+            span
+              i.fa.fa-trash(aria-hidden='true')
+            |  Yoga at 10pm
