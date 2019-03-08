@@ -54,6 +54,7 @@ window.addEventListener('load', () => {
           this.addLocation(data.timezone)
           this.addDesc(summary)
           this.setIcons(icon, '.icon')
+          this.setDate()
           let week = document.querySelectorAll('.weather-week .col')
           console.log(week)
           for (let i = 0; i < week.length; i++) {
@@ -131,6 +132,14 @@ window.addEventListener('load', () => {
       skycons.play()
       return skycons.set(el, Skycons[currTcon])
 
+    }
+
+    setDate(){
+      let output = document.querySelector('.date')
+      let DateTime = luxon.DateTime
+      let today = DateTime.local()
+      let {day,hour} = today.c
+      console.log(day,hour)
     }
 
   }

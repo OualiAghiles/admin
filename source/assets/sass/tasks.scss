@@ -1,0 +1,49 @@
+.todos{
+  padding: 0;
+  .card-task-title{
+    padding: 30px;
+    background-image: url(../img/Rose-Petals.svg);
+    background-size: cover;
+    background-position: bottom center;
+    color: #fff;
+  }
+  .card-panel{
+    padding: 0 !important}
+  h4{
+    margin: 0;
+  }
+  .remain{
+    background-image: url(../img/bg-remain.svg);
+    background-size: cover;
+    background-position: bottom center;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+  }
+  .created-tasks, .competed-tasks{
+    color: #ffffff;
+  }
+  .task-card{
+    margin: 0;
+    padding: 10px 15px;
+  }
+  .card{
+    cursor: pointer;
+    background: #f06292;
+    transition: all 0.3s ease;
+  &:hover{
+    background: #990055;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -7px rgba(0,0,0,0.2);
+  }
+  }
+  .list-todos{
+    .collection-item{
+      display: flex;
+      justify-content: center;
+    }
+    .textTodo{
+      flex: 1;
+    }
+
+  }
+}

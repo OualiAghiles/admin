@@ -17,7 +17,7 @@ const docs = browserSync.create()
 // paths
 const paths = {
   styles: {
-    src: 'source/assets/sass/**/*.sass',
+    src: 'source/assets/sass/main.sass',
     dest: 'dist/assets/styles/',
   },
   scripts: {
@@ -25,7 +25,7 @@ const paths = {
     dest: 'dist/assets/scripts/',
   },
   images: {
-    src: 'source/assets/images/**/*.{jpg,jpeg,png}',
+    src: 'source/assets/images/**/*.{jpg,jpeg,png,svg}',
     dest: 'dist/assets/img/',
   },
   views: {
@@ -154,7 +154,7 @@ function watchFiles() {
   gulp.watch(paths.scripts.src, gulp.series(scripts, doc, reload, docReload));
   gulp.watch([paths.jsDoc.src, paths.jsDoc.read], gulp.series(docReload, doc));
   gulp.watch(paths.views.src, gulp.series(views, reload));
-  gulp.watch(paths.styles.src, gulp.series(styles, reload));
+  gulp.watch('source/assets/sass/**/*.{sass, scss}', gulp.series(styles, reload));
   gulp.watch(paths.images.src, gulp.series(images, reload));
 }
 export {
