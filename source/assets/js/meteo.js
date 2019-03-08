@@ -55,11 +55,11 @@ window.addEventListener('load', () => {
           this.addDesc(summary)
           this.setIcons(icon, '.icon')
           this.setDate()
+          console.log(data)
           let week = document.querySelectorAll('.weather-week .col')
           console.log(week)
           for (let i = 0; i < week.length; i++) {
             const element = data.daily.data[i];
-            console.log(`.d${i}`)
             this.setIcons(element.icon, `.d${i}`)
 
           }
@@ -128,7 +128,6 @@ window.addEventListener('load', () => {
       const el = document.querySelector(dataIcon)
       let currTcon = icon.replace(/-/g, "_")
       currTcon = currTcon.toUpperCase()
-      console.log('currTcon',currTcon)
       skycons.play()
       return skycons.set(el, Skycons[currTcon])
 
@@ -139,7 +138,8 @@ window.addEventListener('load', () => {
       let DateTime = luxon.DateTime
       let today = DateTime.local()
       let {day,hour} = today.c
-      console.log(day,hour)
+      console.log(today.toLocaleString(DateTime.DATE_MED))
+    output.innerHTML = today.toLocaleString(DateTime.DATE_MED)
     }
 
   }

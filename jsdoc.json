@@ -11,7 +11,11 @@
     "tutorials": "./tutorials",
     "template": "node_modules/foodoc/template"
   },
-  "plugins": [
+  "source": {
+    "exclude": ["source/assets/js/moment.js"]
+  },
+
+"plugins": [
     "plugins/markdown"
   ],
   "templates": {
@@ -23,7 +27,7 @@
     },
     "path": "ink-docstrap",
     "navType": "vertical",
-    "linenums": false,
+    "linenums": true,
     "dateFormat": "MMMM Do YYYY, h:mm:ss a",
     "footerText": "NSC Lib"
 

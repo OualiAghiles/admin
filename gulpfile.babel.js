@@ -151,8 +151,8 @@ function images() {
  * You could even use `export as` to rename exported tasks
  */
 function watchFiles() {
-  gulp.watch(paths.scripts.src, gulp.series(scripts, doc, reload, docReload));
-  gulp.watch([paths.jsDoc.src, paths.jsDoc.read], gulp.series(docReload, doc));
+  gulp.watch(paths.scripts.src, gulp.series(scripts,  reload));
+  //gulp.watch([paths.jsDoc.src, paths.jsDoc.read], gulp.series(docReload, doc));
   gulp.watch(paths.views.src, gulp.series(views, reload));
   gulp.watch('source/assets/sass/**/*.{sass, scss}', gulp.series(styles, reload));
   gulp.watch(paths.images.src, gulp.series(images, reload));
@@ -167,7 +167,7 @@ const build = gulp.series(
   gulp.parallel(styles, scripts),
   images,
   serve,
-  doc,
+  //doc,
 );
 /*
  * Export a default task
