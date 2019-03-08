@@ -42,17 +42,15 @@ window.addEventListener('load', () => {
      */
     fetch (long,lat) {
       const proxy = 'https://cors-anywhere.herokuapp.com/'
-      const api = `${proxy}${this.source}/${this.apiKey}/36.7525,3.041970`
+      const api = `${proxy}${this.source}/${this.apiKey}/36.7525,3.041970?units=si&lang=fr`
       fetch(api)
         .then(data => {
           return data.json();
         })
         .then(data => {
           const {temperature, summary, time, icon, humidity} = data.currently
-          console.log(data.currently.temperature)
-          console.log(icon)
-          const temp = Math.floor(this.convTempToC(temperature))
-          this.addTemp(temp)
+          //const temp = Math.floor(this.convTempToC(temperature))
+          this.addTemp(temperature)
           this.addLocation(data.timezone)
           this.addDesc(summary)
           this.setIcons(icon, '.icon')
