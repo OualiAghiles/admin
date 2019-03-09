@@ -48,13 +48,17 @@ window.addEventListener('load', () => {
           return data.json();
         })
         .then(data => {
-          const {temperature, summary, time, icon, humidity} = data.currently
+          const {temperature, summary, pressure,precipProbability,windSpeed, icon, humidity} = data.currently
           //const temp = Math.floor(this.convTempToC(temperature))
           this.addTemp(temperature)
           this.addLocation(data.timezone)
           this.addDesc(summary)
           this.setIcons(icon, '.icon')
           this.setDate()
+          this.addDetails('.hum-count',humidity)
+          this.addDetails('.rain-count',precipProbability)
+          this.addDetails('.wind-count',windSpeed)
+          this.addDetails('.presur-count',pressure)
           console.log(data)
           let week = document.querySelectorAll('.weather-week .col')
           console.log(week)
@@ -132,14 +136,17 @@ window.addEventListener('load', () => {
       return skycons.set(el, Skycons[currTcon])
 
     }
-
+    addDetails(cls, value){
+      let el = document.querySelector(cls)
+      el.innerHTML = value
+    }
     setDate(){
       let output = document.querySelector('.date')
       let DateTime = luxon.DateTime
       let today = DateTime.local()
       let {day,hour} = today.c
       console.log(today.toLocaleString(DateTime.DATE_MED))
-    output.innerHTML = today.toLocaleString(DateTime.DATE_MED)
+      output.innerHTML = today.toLocaleString(DateTime.DATE_MED)
     }
 
   }

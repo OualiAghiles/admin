@@ -1,32 +1,43 @@
 .meteo
-  .card.horizontal
-    .card-image.icon-weather
-      canvas(width="120" height="120", class="icon")
-    .card-stacked
-      .card-content
-        h3
-          small
-            span.weather-temp
-              | temp
-            span.wheater-dergee °C
+  .card
+    .card-content.purple.lighten-3
+      .card-title.meteo-title
         span.weather-location
-          | Location
-        br
-        span.date
-          | 1 janvier
+          | Card Title
+        span.weather-temp
+          | temp
+        span.wheater-dergee °C
+      .date
+      .icon-weather(style='text-align:center')
+        canvas(width="160" height="160", class="icon")
+      h5.weather-description
+      p.weather-details
+        .divider
+        .row
+          .col.s3.el
+            img(src="assets/img/wi-rain.svg" width="35")
+            span.rain-count
+          .col.s3.el
+            img(src="assets/img/wi-humidity.svg", width="35")
+            span.hum-count
+          .col.s3.el
+            img(src="assets/img/wi-strong-wind.svg", width="35")
+            span.wind-count
+          .col.s3.el
+            img(src="assets/img/wi-barometer.svg", width="35")
+            span.presur-count
+    .card-action
+      .row.weather-week
+        .col.m2
+          canvas.d0(width="20" height="20")
+        .col.m2
+          canvas.d1(width="20" height="20")
+        .col.m2
+          canvas.d3(width="20" height="20")
+        .col.m2
+          canvas.d4(width="20" height="20")
+        .col.m2
+          canvas.d5(width="20" height="20")
+        .col.m2
+          canvas.d6(width="20" height="20")
 
-        p.weather-description I am a very simple card. I am good at containing small bits of information.
-      .card-action
-        .row.weather-week
-          .col.m2
-            canvas.d0(width="20" height="20")
-          .col.m2
-            canvas.d1(width="20" height="20")
-          .col.m2
-            canvas.d3(width="20" height="20")
-          .col.m2
-            canvas.d4(width="20" height="20")
-          .col.m2
-            canvas.d5(width="20" height="20")
-          .col.m2
-            canvas.d6(width="20" height="20")
