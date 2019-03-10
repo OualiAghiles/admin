@@ -37,4 +37,4 @@ class Modal {
     })
   }
 }
-new Modal("#modal1")
+// new Modal("#modal1")

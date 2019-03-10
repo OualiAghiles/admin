@@ -9,7 +9,12 @@
     color: #fff;
   }
   .card-panel{
-    padding: 0 !important}
+    padding: 0 !important;
+    overflow: visible;
+    .input-field{
+      margin-bottom: 0;
+    }
+  }
   h4{
     margin: 0;
   }
@@ -24,13 +29,16 @@
   .created-tasks, .competed-tasks{
     color: #ffffff;
   }
+  .collection{
+    overflow: visible;
+  }
   .task-card{
+    clear: both;
     margin: 0;
     padding: 10px 15px;
   }
   .card{
     cursor: pointer;
-    background: #f06292;
     transition: all 0.3s ease;
   &:hover{
     background: #990055;
@@ -40,11 +48,36 @@
   .list-todos{
     .collection-item{
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      &:hover{
+        background: #efefef;
+      }
     }
-    .textTodo{
+    label{
       flex: 1;
+      cursor: pointer;
+      justify-content: center;
+
+    }
+    .collection-el{
+      justify-self: center;
     }
 
+  }
+  .actions{
+    cursor: pointer;
+    &.todo-edit{
+      color: #2196f3;
+      &:hover{
+        color: #2079d1
+      }
+    }
+    &.todo-remove{
+      color: #ff1744;
+      &:hover{
+        color: #bf1735;
+
+      }
+    }
   }
 }

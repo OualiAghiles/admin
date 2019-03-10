@@ -1,54 +1,75 @@
 .card-panel
   h4.card-task-title Hello <br> Aghiles
-  .row.remain
-    span.col.m4.created-tasks
-      .number 54
-      | tasks
-    span.col.m4.competed-tasks
-      .number 54
-      | tasks
-    a.triggerModal.btn-floating.halfway-fab.waves-effect.waves-light.red(href="#", data-target="modal1")
-      i.material-icons add
+  .remain
+      span.created-tasks
+        | Completed
+      span.competed-tasks
+        | Todo
+      span.competed-tasks
+        | ALL
+  .input-field.col.s12
+    i.material-icons.prefix list
+    input#icon_prefix.validate.input-add-todo(type='text')
 
-  .row.task-card
-    .col.s4
-      .card
-        .card-content.white-text
-          span.card-title
-            i.material-icons add
-            |All tasks
-          p
-            | 12 Tasks
-    .col.s4
-      .card
-        .card-content.white-text
-          span.card-title
-            i.material-icons add
-            |All tasks
-          p
-            | 12 Tasks
-    .col.s4
-      .card
-        .card-content.white-text
-          span.card-title
-            i.material-icons add
-            |All tasks
-          p
-            | 12 Tasks
-    .col.s4
-      .card
-        .card-content.white-text
-          span.card-title
-            i.material-icons add
-            |All tasks
-          p
-            | 12 Tasks
-    .col.s4
-      .card
-        .card-content.white-text
-          span.card-title
-            i.material-icons add
-            |All tasks
-          p
-            | 12 Tasks
+  .task-card
+    .collection.list-todos
+      span.collection-item
+        label.collection-el
+          input(type='checkbox')
+          span.textTodo Task to test0
+        span.collection-el
+          span.qs
+            i.material-icons.todo-edit.actions edit
+            span.popover.above Edit Todo
+          span.qs
+            i.material-icons.todo-remove.actions delete
+            span.popover.above Remove Todo
+
+      span.collection-item
+        label.collection-el
+          input(type='checkbox')
+          span.textTodo Task to test3
+        span.collection-el
+          span.qs
+            i.material-icons.todo-edit.actions edit
+            span.popover.above Edit Todo
+          span.qs
+            i.material-icons.todo-remove.actions delete
+            span.popover.above Remove Todo
+
+      span.collection-item
+        label.collection-el
+          input(type='checkbox')
+          span.textTodo Task to test
+        span.collection-el
+          span.qs
+            i.material-icons.todo-edit.actions edit
+            span.popover.above Edit Todo
+          span.qs
+            i.material-icons.todo-remove.actions delete
+            span.popover.above Remove Todo
+
+      span.collection-item
+        label.collection-el
+          input(type='checkbox')
+          span.textTodo Task to test
+        span.collection-el
+          span.qs
+            i.material-icons.todo-edit.actions edit
+            span.popover.above Edit Todo
+          span.qs
+            i.material-icons.todo-remove.actions delete
+            span.popover.above Remove Todo
+
+      span.collection-item
+        label.collection-el
+          input(type='checkbox')
+          span.textTodo Task to test
+        span.collection-el
+          span.qs
+            i.material-icons.todo-edit.actions edit
+            span.popover.above Edit Todo
+          span.qs
+            i.material-icons.todo-remove.actions delete
+            span.popover.above Remove Todo
 
